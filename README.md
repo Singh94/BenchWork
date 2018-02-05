@@ -24,7 +24,6 @@ Student Addmission Form
 
 		- Extra Curricular Activites Taken On
 
-
 Possibly Add Web FrontEnd - Allow Students to view TimeTable On SmartPhone
 Allow Parents to View Progress, Absenses etc
 
