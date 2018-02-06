@@ -1,0 +1,13 @@
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\bin\Debug\StudentAdmissions.exe.config
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\bin\Debug\StudentAdmissions.exe
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\bin\Debug\StudentAdmissions.pdb
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.csprojResolveAssemblyReference.cache
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Login.resources
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Properties.Resources.resources
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.csproj.GenerateResource.Cache
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.csproj.CoreCompileInputs.cache
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.exe
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.pdb
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\bin\Debug\Resources\Database\LoginDatabase.mdf
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\bin\Debug\Resources\Database\LoginDatabase_log.ldf
+C:\Users\Khem Singh\Desktop\BenchWork\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Resources.Froms.UserAccounts.resources
