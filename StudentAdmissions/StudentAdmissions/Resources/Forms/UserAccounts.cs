@@ -67,7 +67,7 @@ namespace StudentAdmissions.Resources.Froms {
 
         private void lblUsername_Click(object sender, EventArgs e) {
             txtUsername.Enabled = true;
-            txtFirstName.Clear();
+            txtUsername.Clear();
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -91,16 +91,27 @@ namespace StudentAdmissions.Resources.Froms {
         }
 
         private void btnFind_Click(object sender, EventArgs e) {
-
+            string userPassword = encryptPassword(txtPassword.Text + "MySignature" + txtUsername.Text);
+            SqlDataReader sdr = null;
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM LoginDetails WHERE Username = '" + txtUsername.Text + "'", con);
+            sdr = cmd.ExecuteReader();
+            while (sdr.Read()) {
+                txtFirstName.Text = (txtFirstName.Text = (sdr["FirstName"].ToString()));
+                txtMName.Text = (txtMName.Text = (sdr["Middlename"].ToString()));
+                txtSurname.Text = (txtSurname.Text = (sdr["Surname"].ToString()));
+                txtPassword.Text = userPassword;
+            }
+            con.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
 
-            string userPassword = encryptPassword(txtPassword.Text + "MySignature" + txtUsername.Text); ;
+            string userPassword = encryptPassword(txtPassword.Text + "MySignature" + txtUsername.Text);
 
             if (chbxAdmin == null) {
                 SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
-                con.Close();
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -113,10 +124,11 @@ namespace StudentAdmissions.Resources.Froms {
                     + 'N' + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
+                clearTextBoxes();
+                MessageBox.Show("User successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
                 SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
-                con.Close();
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -129,15 +141,32 @@ namespace StudentAdmissions.Resources.Froms {
                     + 'Y' + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
+                clearTextBoxes();
+                MessageBox.Show("User successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e) {
-
+            string userPassword = encryptPassword(txtPassword.Text + "MySignature" + txtUsername.Text);
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE LoginDetails SET Firstname = '" + txtFirstName.Text + "'," + "Middlename = '" + txtMName.Text + "', " + "Surname = '" + txtSurname.Text + "', " + "Password = '" + userPassword + "'" + " WHERE Username = '" + txtUsername.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Record Successfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            clearTextBoxes();
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
-
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
+            if (true) {
+                MessageBox.Show("WARNING: Unable to delete your own account!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                MessageBox.Show("Record Successfully Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e) {

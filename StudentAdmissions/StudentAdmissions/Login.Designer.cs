@@ -61,9 +61,10 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(80, 74);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '⭗';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(166, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLogin
             // 

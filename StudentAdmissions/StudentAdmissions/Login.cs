@@ -22,20 +22,16 @@ namespace StudentAdmissions {
 
             string userPassword = encryptPassword(txtPassword.Text + "MySignature" + txtUsername.Text);
 
-            /*
             SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
             con.Close();
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM LoginDetails WHERE Username = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM LoginDetails WHERE Username = '" + txtUsername.Text + "' AND Password = '" + userPassword + "'", con);
             SqlDataReader sdr = cmd.ExecuteReader();
 
             while (sdr.Read()) {
-                // OPEN NEW FORM
+                UserAccounts userAccounts = new UserAccounts(txtUsername.Text);
+                userAccounts.Show();
             }
-            */
-
-            UserAccounts userAccounts = new UserAccounts();
-            userAccounts.Show();
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
