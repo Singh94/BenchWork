@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using StudentAdmissions.Resources.Froms;
+using StudentAdmissions.Resources.Forms;
 
 namespace StudentAdmissions {
     public partial class Login : Form {
@@ -19,19 +20,25 @@ namespace StudentAdmissions {
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
-
             string userPassword = encryptPassword(txtPassword.Text + "MySignature" + txtUsername.Text);
 
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\BenchWork\\StudentAdmissions\\StudentAdmissions\\Resources\\Database\\LoginDatabase.mdf;Integrated Security=True");
-            con.Close();
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\" + Environment.UserName + "\\Desktop\\Bench\\StudentAdmissions\\StudentAdmissions\\Resources\\Databases\\UserAccounts.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM LoginDetails WHERE Username = '" + txtUsername.Text + "' AND Password = '" + userPassword + "'", con);
             SqlDataReader sdr = cmd.ExecuteReader();
 
-            while (sdr.Read()) {
-                UserAccounts userAccounts = new UserAccounts(txtUsername.Text);
-                userAccounts.Show();
+            if (sdr.Read()) {
+                Selector selector = new Selector(txtUsername.Text);
+                selector.Show();
+                this.Hide();
             }
+            else {
+                MessageBox.Show("Username and/or Password is incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Clear();
+                txtPassword.Clear();
+                txtUsername.Focus();
+            }
+            con.Close();
         }
 
         private void btnClear_Click(object sender, EventArgs e) {

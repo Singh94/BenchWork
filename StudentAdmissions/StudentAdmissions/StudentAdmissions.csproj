@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6B13775-F88F-4567-A963-E0A763B76CB8}</ProjectGuid>
+    <ProjectGuid>{694B2C3C-32AB-49D6-9243-FCE7179C7AD5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>StudentAdmissions</RootNamespace>
     <AssemblyName>StudentAdmissions</AssemblyName>
@@ -66,18 +66,48 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Forms\UserAccounts.cs">
+    <Compile Include="Resources\Forms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\Forms\UserAccounts.Designer.cs">
-      <DependentUpon>UserAccounts.cs</DependentUpon>
+    <Compile Include="Resources\Forms\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Forms\DataEntry\StudentAccountsDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Forms\DataEntry\StudentAccountsDE.Designer.cs">
+      <DependentUpon>StudentAccountsDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Forms\DataEntry\UserAccountsDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Forms\DataEntry\UserAccountsDE.Designer.cs">
+      <DependentUpon>UserAccountsDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Forms\Selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Forms\Selector.Designer.cs">
+      <DependentUpon>Selector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Forms\TableView\StudentAccountsTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Forms\TableView\StudentAccountsTV.Designer.cs">
+      <DependentUpon>StudentAccountsTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Forms\TableView\UserAccountsTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Forms\TableView\UserAccountsTV.Designer.cs">
+      <DependentUpon>UserAccountsTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccountsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAccountsDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -91,20 +121,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Resources\Forms\UserAccounts.resx">
-      <DependentUpon>UserAccounts.cs</DependentUpon>
+    <EmbeddedResource Include="Resources\Forms\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="LoginDatabaseDataSet.xsc">
-      <DependentUpon>LoginDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LoginDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LoginDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LoginDatabaseDataSet.xss">
-      <DependentUpon>LoginDatabaseDataSet.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="Resources\Forms\DataEntry\StudentAccountsDE.resx">
+      <DependentUpon>StudentAccountsDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Forms\DataEntry\UserAccountsDE.resx">
+      <DependentUpon>UserAccountsDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Forms\Selector.resx">
+      <DependentUpon>Selector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Forms\TableView\StudentAccountsTV.resx">
+      <DependentUpon>StudentAccountsTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Forms\TableView\UserAccountsTV.resx">
+      <DependentUpon>UserAccountsTV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,19 +148,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UserAccountsDataSet.xsc">
+      <DependentUpon>UserAccountsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UserAccountsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserAccountsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UserAccountsDataSet.xss">
+      <DependentUpon>UserAccountsDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Resources\Database\LoginDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Database\LoginDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>LoginDatabase.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
@@ -139,6 +174,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Databases\UserAccounts.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Databases\UserAccounts_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>UserAccounts.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
