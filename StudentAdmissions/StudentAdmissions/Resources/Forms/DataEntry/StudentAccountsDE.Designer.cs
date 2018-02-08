@@ -37,7 +37,7 @@
             this.chlbModules = new System.Windows.Forms.CheckedListBox();
             this.lblGrade = new System.Windows.Forms.Label();
             this.cmboGrade = new System.Windows.Forms.ComboBox();
-            this.btnResetPassword = new System.Windows.Forms.Button();
+            this.btnGenerateID = new System.Windows.Forms.Button();
             this.lblFYear = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -59,6 +59,7 @@
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,6 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(149, 20);
             this.txtFirstName.TabIndex = 5;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // lblFirstName
             // 
@@ -110,7 +110,6 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(150, 20);
             this.txtSurname.TabIndex = 9;
-            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged);
             // 
             // lblSurname
             // 
@@ -222,14 +221,15 @@
             this.cmboGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmboGrade_KeyDown);
             this.cmboGrade.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmboGrade_KeyUp);
             // 
-            // btnResetPassword
+            // btnGenerateID
             // 
-            this.btnResetPassword.Location = new System.Drawing.Point(184, 56);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(121, 23);
-            this.btnResetPassword.TabIndex = 15;
-            this.btnResetPassword.Text = "Reset Password";
-            this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnGenerateID.Location = new System.Drawing.Point(184, 56);
+            this.btnGenerateID.Name = "btnGenerateID";
+            this.btnGenerateID.Size = new System.Drawing.Size(186, 23);
+            this.btnGenerateID.TabIndex = 15;
+            this.btnGenerateID.Text = "GenerateID";
+            this.btnGenerateID.UseVisualStyleBackColor = true;
+            this.btnGenerateID.Click += new System.EventHandler(this.btnGenerateID_Click);
             // 
             // lblFYear
             // 
@@ -237,7 +237,7 @@
             this.lblFYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFYear.Location = new System.Drawing.Point(181, 141);
             this.lblFYear.Name = "lblFYear";
-            this.lblFYear.Size = new System.Drawing.Size(195, 16);
+            this.lblFYear.Size = new System.Drawing.Size(190, 16);
             this.lblFYear.TabIndex = 16;
             this.lblFYear.Text = "Foundation Year Required";
             // 
@@ -351,26 +351,26 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exitToolStripMenuItem.Text = "Import Data";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.importDataToolStripMenuItem_Click);
             // 
             // exportDAtaToolStripMenuItem
             // 
             this.exportDAtaToolStripMenuItem.Name = "exportDAtaToolStripMenuItem";
-            this.exportDAtaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportDAtaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportDAtaToolStripMenuItem.Text = "Export Data";
             this.exportDAtaToolStripMenuItem.Click += new System.EventHandler(this.exportDataToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(134, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -388,25 +388,35 @@
             // viewHelpToolStripMenuItem
             // 
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.viewHelpToolStripMenuItem.Text = "View Help";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(16, 406);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(148, 23);
+            this.button5.TabIndex = 28;
+            this.button5.Text = "Reset Password";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // StudentAccountsDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 417);
+            this.ClientSize = new System.Drawing.Size(669, 455);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.txtExamGrade);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtHomeworkGrade);
@@ -418,7 +428,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblFYear);
-            this.Controls.Add(this.btnResetPassword);
+            this.Controls.Add(this.btnGenerateID);
             this.Controls.Add(this.cmboGrade);
             this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.chlbModules);
@@ -459,7 +469,7 @@
         private System.Windows.Forms.CheckedListBox chlbModules;
         private System.Windows.Forms.Label lblGrade;
         private System.Windows.Forms.ComboBox cmboGrade;
-        private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.Button btnGenerateID;
         private System.Windows.Forms.Label lblFYear;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -481,5 +491,6 @@
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -14,7 +14,6 @@ namespace StudentAdmissions.Resources.Forms.DataEntry {
             InitializeComponent();
             lblRUsername.Text = restrictedUser;
             txtUsername.Enabled = false;
-            txtUsername.Text = generateID();
             cmboGrade.DropDownStyle = ComboBoxStyle.DropDownList;
             lblRUsername.Visible = false;
             chlbModules.Enabled = false;
@@ -89,12 +88,18 @@ namespace StudentAdmissions.Resources.Forms.DataEntry {
             checkGrades();
         }
 
-        private void txtFirstName_TextChanged(object sender, EventArgs e) {
-            fl = txtFirstName.Text.Substring(0, 1);
-        }
-
-        private void txtSurname_TextChanged(object sender, EventArgs e) {
-            sl = txtSurname.Text.Substring(0, 1);
+        private void btnGenerateID_Click(object sender, EventArgs e) {
+            if(txtFirstName.Text == "" || txtSurname.Text == "") {
+                string output = "";
+                if (txtFirstName.Text == "") output += "Please Enter a First Name \n";
+                if (txtSurname.Text == "") output += "Please Enter a Surname \n";
+                MessageBox.Show(output, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                fl = txtFirstName.Text.Substring(0, 1).ToUpper();
+                sl = txtSurname.Text.Substring(0, 1).ToUpper();
+                txtUsername.Text = generateID();
+            }
         }
     }
 }
