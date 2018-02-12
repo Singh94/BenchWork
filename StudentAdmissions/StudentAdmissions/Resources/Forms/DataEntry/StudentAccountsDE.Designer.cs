@@ -39,10 +39,10 @@
             this.cmboGrade = new System.Windows.Forms.ComboBox();
             this.btnGenerateID = new System.Windows.Forms.Button();
             this.lblFYear = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.lblActivites = new System.Windows.Forms.Label();
             this.rtxtActivites = new System.Windows.Forms.RichTextBox();
             this.txtHomeworkGrade = new System.Windows.Forms.TextBox();
@@ -59,7 +59,9 @@
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnResetPassword = new System.Windows.Forms.Button();
+            this.rtxtConcerns = new System.Windows.Forms.RichTextBox();
+            this.lblConcerns = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +82,7 @@
             this.lblUsername.Size = new System.Drawing.Size(55, 13);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // txtUsername
             // 
@@ -151,6 +154,7 @@
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(150, 20);
             this.dtpDOB.TabIndex = 11;
+            this.dtpDOB.Value = new System.DateTime(2018, 2, 12, 0, 0, 0, 0);
             // 
             // chlbModules
             // 
@@ -176,7 +180,7 @@
             "Software Engineering"});
             this.chlbModules.Location = new System.Drawing.Point(184, 172);
             this.chlbModules.Name = "chlbModules";
-            this.chlbModules.Size = new System.Drawing.Size(186, 229);
+            this.chlbModules.Size = new System.Drawing.Size(186, 274);
             this.chlbModules.TabIndex = 12;
             // 
             // lblGrade
@@ -241,46 +245,48 @@
             this.lblFYear.TabIndex = 16;
             this.lblFYear.Text = "Foundation Year Required";
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(15, 293);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 50);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(14, 302);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(72, 50);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(93, 293);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 50);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(92, 302);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(72, 50);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(16, 349);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 50);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(14, 358);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(72, 50);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button4
+            // btnFind
             // 
-            this.button4.Location = new System.Drawing.Point(94, 349);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(72, 50);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Find";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFind.Location = new System.Drawing.Point(92, 358);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(72, 50);
+            this.btnFind.TabIndex = 20;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // lblActivites
             // 
             this.lblActivites.AutoSize = true;
-            this.lblActivites.Location = new System.Drawing.Point(382, 42);
+            this.lblActivites.Location = new System.Drawing.Point(382, 41);
             this.lblActivites.Name = "lblActivites";
             this.lblActivites.Size = new System.Drawing.Size(123, 13);
             this.lblActivites.TabIndex = 21;
@@ -288,7 +294,7 @@
             // 
             // rtxtActivites
             // 
-            this.rtxtActivites.Location = new System.Drawing.Point(385, 59);
+            this.rtxtActivites.Location = new System.Drawing.Point(385, 58);
             this.rtxtActivites.Name = "rtxtActivites";
             this.rtxtActivites.Size = new System.Drawing.Size(263, 151);
             this.rtxtActivites.TabIndex = 22;
@@ -300,6 +306,7 @@
             this.txtHomeworkGrade.Name = "txtHomeworkGrade";
             this.txtHomeworkGrade.Size = new System.Drawing.Size(87, 20);
             this.txtHomeworkGrade.TabIndex = 24;
+            this.txtHomeworkGrade.Text = "0";
             // 
             // label1
             // 
@@ -312,15 +319,16 @@
             // 
             // txtExamGrade
             // 
-            this.txtExamGrade.Location = new System.Drawing.Point(385, 293);
+            this.txtExamGrade.Location = new System.Drawing.Point(561, 244);
             this.txtExamGrade.Name = "txtExamGrade";
             this.txtExamGrade.Size = new System.Drawing.Size(87, 20);
             this.txtExamGrade.TabIndex = 26;
+            this.txtExamGrade.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(382, 276);
+            this.label2.Location = new System.Drawing.Point(558, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 25;
@@ -402,31 +410,51 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // button5
+            // btnResetPassword
             // 
-            this.button5.Location = new System.Drawing.Point(16, 406);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(148, 23);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Reset Password";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Location = new System.Drawing.Point(17, 423);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(148, 23);
+            this.btnResetPassword.TabIndex = 28;
+            this.btnResetPassword.Text = "Reset Password";
+            this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
+            // 
+            // rtxtConcerns
+            // 
+            this.rtxtConcerns.Location = new System.Drawing.Point(385, 295);
+            this.rtxtConcerns.Name = "rtxtConcerns";
+            this.rtxtConcerns.Size = new System.Drawing.Size(263, 151);
+            this.rtxtConcerns.TabIndex = 30;
+            this.rtxtConcerns.Text = "";
+            // 
+            // lblConcerns
+            // 
+            this.lblConcerns.AutoSize = true;
+            this.lblConcerns.Location = new System.Drawing.Point(382, 278);
+            this.lblConcerns.Name = "lblConcerns";
+            this.lblConcerns.Size = new System.Drawing.Size(97, 13);
+            this.lblConcerns.TabIndex = 29;
+            this.lblConcerns.Text = "Causes of Concern";
             // 
             // StudentAccountsDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 455);
-            this.Controls.Add(this.button5);
+            this.ClientSize = new System.Drawing.Size(669, 466);
+            this.Controls.Add(this.rtxtConcerns);
+            this.Controls.Add(this.lblConcerns);
+            this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.txtExamGrade);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtHomeworkGrade);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtxtActivites);
             this.Controls.Add(this.lblActivites);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblFYear);
             this.Controls.Add(this.btnGenerateID);
             this.Controls.Add(this.cmboGrade);
@@ -446,7 +474,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "StudentAccountsDE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "7";
+            this.Text = "Student Accounts";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -471,10 +499,10 @@
         private System.Windows.Forms.ComboBox cmboGrade;
         private System.Windows.Forms.Button btnGenerateID;
         private System.Windows.Forms.Label lblFYear;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Label lblActivites;
         private System.Windows.Forms.RichTextBox rtxtActivites;
         private System.Windows.Forms.TextBox txtHomeworkGrade;
@@ -491,6 +519,8 @@
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.RichTextBox rtxtConcerns;
+        private System.Windows.Forms.Label lblConcerns;
     }
 }

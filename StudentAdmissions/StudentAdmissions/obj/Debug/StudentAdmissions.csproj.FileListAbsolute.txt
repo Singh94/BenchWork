@@ -16,3 +16,4 @@ C:\Users\Khem Singh\Desktop\Bench\StudentAdmissions\StudentAdmissions\obj\Debug\
 C:\Users\Khem Singh\Desktop\Bench\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Resources.Forms.DataEntry.StudentAccountsDE.resources
 C:\Users\Khem Singh\Desktop\Bench\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Resources.Forms.TableView.StudentAccountsTV.resources
 C:\Users\Khem Singh\Desktop\Bench\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Resources.Forms.About.resources
+C:\Users\Khem Singh\Desktop\Bench\StudentAdmissions\StudentAdmissions\obj\Debug\StudentAdmissions.Resources.Forms.DataEntry.StudentResetPassword.resources

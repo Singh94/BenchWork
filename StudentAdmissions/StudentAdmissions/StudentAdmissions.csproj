@@ -80,6 +80,12 @@
     <Compile Include="Resources\Forms\DataEntry\StudentAccountsDE.Designer.cs">
       <DependentUpon>StudentAccountsDE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Forms\DataEntry\StudentResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Forms\DataEntry\StudentResetPassword.Designer.cs">
+      <DependentUpon>StudentResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Forms\DataEntry\UserAccountsDE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <EmbeddedResource Include="Resources\Forms\DataEntry\StudentAccountsDE.resx">
       <DependentUpon>StudentAccountsDE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Forms\DataEntry\StudentResetPassword.resx">
+      <DependentUpon>StudentResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Forms\DataEntry\UserAccountsDE.resx">
       <DependentUpon>UserAccountsDE.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +148,7 @@
     <EmbeddedResource Include="Resources\Forms\TableView\UserAccountsTV.resx">
       <DependentUpon>UserAccountsTV.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
